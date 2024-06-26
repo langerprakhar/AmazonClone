@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Care Catalog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #007bff; /* Blue background color */
+            color: #000; /* Text color (black) */
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+        .image {
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pet Care</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Pet Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img class="image" src="dog_food.jpg" alt="Dog Food"></td>
+                    <td>Dog Food</td>
+                    <td>Premium dog food</td>
+                    <td>$39.99</td>
+                    <td>Dog</td>
+                </tr>
+                <tr>
+                    <td><img class="image" src="cat_litter.jpg" alt="Cat Litter"></td>
+                    <td>Cat Litter</td>
+                    <td>Clumping cat litter</td>
+                    <td>$14.99</td>
+                    <td>Cat</td>
+                </tr>
+                <tr>
+                    <td><img class="image" src="fish_tank.jpg" alt="Fish Tank"></td>
+                    <td>Fish Tank</td>
+                    <td>20-gallon fish tank</td>
+                    <td>$79.99</td>
+                    <td>Fish</td>
+                </tr>
+                <tr>
+                    <td><img class="image" src="bird_cage.jpg" alt="Bird Cage"></td>
+                    <td>Bird Cage</td>
+                    <td>Spacious bird cage</td>
+                    <td>$49.99</td>
+                    <td>Bird</td>
+                </tr>
+                <tr>
+                    <td><img class="image" src="hamster_bedding.jpg" alt="Hamster Bedding"></td>
+                    <td>Hamster Bedding</td>
+                    <td>Soft bedding for hamsters</td>
+                    <td>$9.99</td>
+                    <td>Hamster</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

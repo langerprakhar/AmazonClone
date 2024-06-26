@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makeup Catalog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #007bff; /* Blue background color */
+            color: #000; /* Text color (black) */
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+        .image {
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Makeup</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Brand</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img class="image" src="foundation1.jpg" alt="Foundation"></td>
+                    <td>Foundation</td>
+                    <td>Matte foundation</td>
+                    <td>$29.99</td>
+                    <td>Maybelline</td>
+                </tr>
+                <tr>
+                    <td><img class="image" src="lipstick.jpg" alt="Lipstick"></td>
+                    <td>Lipstick</td>
+                    <td>Long-lasting lipstick</td>
+                    <td>$14.99</td>
+                    <td>Revlon</td>
+                </tr>
+                <tr>
+                    <td><img class="image" src="mascara.jpg" alt="Mascara"></td>
+                    <td>Mascara</td>
+                    <td>Volumizing mascara</td>
+                    <td>$9.99</td>
+                    <td>L'Oréal</td>
+                </tr>
+                <tr>
+                    <td><img class="image" src="eyeliner.jpg" alt="Eyeliner"></td>
+                    <td>Eyeliner</td>
+                    <td>Liquid eyeliner</td>
+                    <td>$8.99</td>
+                    <td>NYX</td>
+                </tr>
+                <tr>
+                    <td><img class="image" src="blush.jpg" alt="Blush"></td>
+                    <td>Blush</td>
+                    <td>Powder blush</td>
+                    <td>$12.99</td>
+                    <td>Milani</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

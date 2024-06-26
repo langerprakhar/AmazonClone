@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Catalog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #007bff; /* Blue background color */
+            color: #000; /* Text color (black) */
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+        .image {
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Electronics</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Brand</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img class="image" src="smartphone.jpg" alt="Smartphone"></td>
+                    <td>Smartphone</td>
+                    <td>Latest smartphone model</td>
+                    <td>$699.99</td>
+                    <td>Apple</td>
+                </tr>
+                <tr>
+                    <td><img class="image" src="laptop.jpg" alt="Laptop"></td>
+                    <td>Laptop</td>
+                    <td>Thin and light laptop</td>
+                    <td>$1299.99</td>
+                    <td>Dell</td>
+                </tr>
+                <tr>
+                    <td><img class="image" src="tablet.jpg" alt="Tablet"></td>
+                    <td>Tablet</td>
+                    <td>10-inch tablet</td>
+                    <td>$399.99</td>
+                    <td>Samsung</td>
+                </tr>
+                <tr>
+                    <td><img class="image" src="headphones.jpg" alt="Headphones"></td>
+                    <td>Headphones</td>
+                    <td>Wireless noise-canceling headphones</td>
+                    <td>$299.99</td>
+                    <td>Sony</td>
+                </tr>
+                <tr>
+                    <td><img class="image" src="smartwatch.jpg" alt="Smartwatch"></td>
+                    <td>Smartwatch</td>
+                    <td>Fitness tracking smartwatch</td>
+                    <td>$249.99</td>
+                    <td>Fitbit</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

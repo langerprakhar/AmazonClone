@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Catalog</title>
+    <!-- CSS styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #007bff; /* Blue background color */
+            background-image: url('amazon_background.jpg'); /* Background image related to Amazon */
+            background-size: cover; /* Cover the entire background */
+            background-repeat: no-repeat; /* Prevent repeating background */
+            background-position: center; /* Center the background image */
+            color: #000; /* Text color (black) */
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+        .selected {
+            background-color: #add8e6; /* Light blue color */
+        }
+        .image {
+            width: 100px;
+            height: auto;
+        }
+        button.add-clothes {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+            margin-top: -40px; /* Adjusted margin-top for the button */
+        }
+        button.add-clothes:hover {
+            background-color: #45a049;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .card label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .card input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .card input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .card input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Clothing Catalog</h1>
+        <!-- Button to toggle form for adding new clothes -->
+        <button class="add-clothes" onclick="toggleForm()">Add New Clothes</button>
+        <!-- Form for adding new clothes (initially hidden) -->
+        <div id="clothesForm" class="card" style="display: none;">
+            <h2>Add New Clothes</h2>
+            <form action="add_clothes.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required><br>
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price" required><br>
+                <label for="size">Size:</label>
+                <input type="text" id="size" name="size" required><br>
+                <label for="color">Color:</label>
+                <input type="text" id="color" name="color" required><br>
+                <input type="submit" value="Add">
+            </form>
+        </div>
+        <!-- Display existing clothes items -->
+        <table id="clothingTable">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img class="image" src="clothing1.jpg" alt="T-Shirt"></td>
+                    <td>T-Shirt</td>
+                    <td>Men's Tops</td>
+                    <td>$10.99</td>
+                    <td>Basic cotton T-Shirt</td>
+                </tr>
+                <tr>
+                    <td><img class="image" src="clothing2.jpg" alt="Jeans"></td>
+                    <td>Jeans</td>
+                    <td>Men's Bottoms</td>
+                    <td>$29.99</td>
+                    <td>Slim-fit jeans</td>
+                </tr>
+                <tr>
+                    <td><img class="image" src="clothing3.jpg" alt="Dress"></td>
+                    <td>Dress</td>
+                    <td>Women's Dresses</td>
+                    <td>$24.99</td>
+                    <td>Summer floral dress</td>
+                </tr>
+                <tr>
+                    <td><img class="image" src="clothing_4.jpg" alt="Hoodie"></td>
+                    <td>Hoodie</td>
+                    <td>Men's Tops</td>
+                    <td>$39.99</td>
+                    <td>Fleece-lined hoodie</td>
+                </tr>
+                <tr>
+                    <td><img class="image" src="clothing5.jpg" alt="Skirt"></td>
+                    <td>Skirt</td>
+                    <td>Women's Bottoms</td>
+                    <td>$19.99</td>
+                    <td>Denim mini skirt</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- JavaScript to toggle form visibility -->
+    <script>
+        function toggleForm() {
+            var form = document.getElementById("clothesForm");
+            if (form.style.display === "none") {
+                form.style.display = "block";
+            } else {
+                form.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        // JavaScript to add click event listener to table rows
+        document.addEventListener('DOMContentLoaded', function () {
+            var tableRows = document.querySelectorAll('#clothingTable tbody tr');
+            tableRows.forEach(function (row) {
+                row.addEventListener('click', function () {
+                    // Remove selected class from all rows
+                    tableRows.forEach(function (row) {
+                        row.classList.remove('selected');
+                    });
+
+                    // Add selected class to the clicked row
+                    this.classList.add('selected');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
